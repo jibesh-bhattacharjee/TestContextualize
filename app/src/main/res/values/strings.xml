@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TestContextualize</string>
+    <string name="search">Search...</string>
+    <string name="ok">OK</string>
+    <string name="persons">Persons</string>
+    <string name="places">Places</string>
+    <string name="things">Things</string>
+    <string name="newarticle">Add Article</string>
+    <string name="write_article">Write Your Article</string>
+    <string name="heading">Heading...</string>
+    <string name="write">Write here...</string>
+    <string name="publish">Publish</string>
+    <array name="spinner_tags">
+        <item>Persons</item>
+        <item>Places</item>
+        <item>Things</item>
+    </array>
+
+</resources>
