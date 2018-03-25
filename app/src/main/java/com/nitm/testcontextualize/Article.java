@@ -11,15 +11,19 @@ public class Article {
     private String description;
 
     //Constructor
-    Article(String t,String h, String d){
+    public Article(String t,String h, String d){
         tag = t;
         heading = h;
         description = d;
     }
 
-    Article(String h, String d){
+    public Article(String h, String d){
         heading = h;
         description = d;
+    }
+
+    public  Article(){
+
     }
 
     //Methods
