@@ -43,24 +43,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        /**
-         * Static Adapter
-         */
-        /*
-        articleItems = new ArrayList<>();
 
-        for(int i=0;i<10;i++){
-            Article a = new Article(i+"", "Description is"+i);
-            articleItems.add(a);
-        }
-
-        adapter = new ArticleAdapter(articleItems, this);
-
-        recyclerView.setAdapter(adapter);
-        */
-        /**
-         * Static Adapter --END
-         */
 
 
         personsTextView.setOnClickListener(new View.OnClickListener() {
@@ -74,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
                         viewHolder.setHeading(model.getHeading());
                         viewHolder.setDescription(model.getDescription());
                     }
+
                 };
 
                 recyclerView.setAdapter(firebaseRecyclerAdapter);
-                //displayTextView = (TextView) findViewById(R.id.displayTextView);
-                //displayTextView.setText("Displaying Persons");
+
             }
         });
 
@@ -96,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 };
 
                 recyclerView.setAdapter(firebaseRecyclerAdapter);
-                //displayTextView = (TextView) findViewById(R.id.displayTextView);
-                //displayTextView.setText("Displaying Places");
+
             }
         });
 
@@ -115,8 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 };
 
                 recyclerView.setAdapter(firebaseRecyclerAdapter);
-                //displayTextView = (TextView) findViewById(R.id.displayTextView);
-                //displayTextView.setText("Displaying Things");
+
             }
         });
 
@@ -131,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             protected void populateViewHolder(ArticleViewHolder viewHolder, Article model, int position) {
                 viewHolder.setHeading(model.getHeading());
                 viewHolder.setDescription(model.getDescription());
+                //viewHolder.itemView.setOnClickListener();
             }
         };
 
