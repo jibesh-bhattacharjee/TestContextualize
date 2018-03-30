@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -56,6 +58,20 @@ public class MainActivity extends AppCompatActivity {
                     protected void populateViewHolder(ArticleViewHolder viewHolder, Article model, int position) {
                         viewHolder.setHeading(model.getHeading());
                         viewHolder.setDescription(model.getDescription());
+
+                        final String head = model.getHeading();
+                        final String desc = model.getDescription();
+
+                        viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "You clicked a View", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(MainActivity.this, ArticleDetailsActivity.class);
+                                intent.putExtra("Heading", head);
+                                intent.putExtra("Description", desc);
+                                startActivity(intent);
+                            }
+                        });
                     }
 
                 };
@@ -75,6 +91,20 @@ public class MainActivity extends AppCompatActivity {
                     protected void populateViewHolder(ArticleViewHolder viewHolder, Article model, int position) {
                         viewHolder.setHeading(model.getHeading());
                         viewHolder.setDescription(model.getDescription());
+
+                        final String head = model.getHeading();
+                        final String desc = model.getDescription();
+
+                        viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "You clicked a View", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(MainActivity.this, ArticleDetailsActivity.class);
+                                intent.putExtra("Heading", head);
+                                intent.putExtra("Description", desc);
+                                startActivity(intent);
+                            }
+                        });
                     }
                 };
 
@@ -93,6 +123,21 @@ public class MainActivity extends AppCompatActivity {
                     protected void populateViewHolder(ArticleViewHolder viewHolder, Article model, int position) {
                         viewHolder.setHeading(model.getHeading());
                         viewHolder.setDescription(model.getDescription());
+
+                        final String head = model.getHeading();
+                        final String desc = model.getDescription();
+
+                        viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "You clicked a View", Toast.LENGTH_LONG).show();
+
+                                Intent intent = new Intent(MainActivity.this, ArticleDetailsActivity.class);
+                                intent.putExtra("Heading", head);
+                                intent.putExtra("Description", desc);
+                                startActivity(intent);
+                            }
+                        });
                     }
                 };
 
@@ -112,7 +157,21 @@ public class MainActivity extends AppCompatActivity {
             protected void populateViewHolder(ArticleViewHolder viewHolder, Article model, int position) {
                 viewHolder.setHeading(model.getHeading());
                 viewHolder.setDescription(model.getDescription());
+
+                final String head = model.getHeading();
+                final String desc = model.getDescription();
+
                 //viewHolder.itemView.setOnClickListener();
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this, "You clicked a View", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, ArticleDetailsActivity.class);
+                        intent.putExtra("Heading", head);
+                        intent.putExtra("Description", desc);
+                        startActivity(intent);
+                    }
+                });
             }
         };
 
@@ -122,9 +181,13 @@ public class MainActivity extends AppCompatActivity {
 
     public static class ArticleViewHolder extends RecyclerView.ViewHolder{
         View mView;
+        public LinearLayout listItemLinearLayout;
+
+
         public ArticleViewHolder(View itemView){
             super(itemView);
             mView = itemView;
+            listItemLinearLayout = (LinearLayout) itemView.findViewById(R.id.listItemLinearLayout);
         }
 
         public void setHeading(String s){

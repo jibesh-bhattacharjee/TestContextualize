@@ -11,6 +11,7 @@
     <string name="write">Write here...</string>
     <string name="publish">Publish</string>
     <string name="tabno1">This is tab 1</string>
+    <string name="description">Description...</string>
     <array name="spinner_tags">
         <item>Persons</item>
         <item>Places</item>
